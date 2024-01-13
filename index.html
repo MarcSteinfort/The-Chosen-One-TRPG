@@ -19,21 +19,21 @@
 
 <body>
     <h1 class="heading"></h1>
-
+    <div class="attributes">
+        <p>Attributes:</p>
+        <p id="strength">Strength: 5</p>
+        <p id="dexterity">Dexterity: 5</p>
+        <p id="intelligence">Intelligence: 5</p>
+    </div>
     <div class="game">
-        <div class="attributes">
-            <p>Attributes:</p>
-            <p id="strength">Strength: 5</p>
-            <p id="dexterity">Dexterity: 5</p>
-            <p id="intelligence">Intelligence: 5</p>
-        </div>
+
         <div class="gameplay">
             <div id="text">Text</div>
             <div id="button_choice" class="button_grid">
-                <button class="btn btn--1">Text one</button>
-                <button class="btn btn--2">Text two</button>
-                <button class="btn btn--3">Text three</button>
-                <button class="btn btn--4">Text four</button>
+                <button class="btn btn--1" onclick="makeChoice(1)">Choice 1</button>
+                <button class="btn btn--2" onclick="makeChoice(2)">Choice 2</button>
+                <button class="btn btn--3" onclick="makeChoice(3)">Choice 3</button>
+                <button class="btn btn--4" onclick="makeChoice(4)">Choice 4</button>
             </div>
         </div>
     </div>
