@@ -21,13 +21,14 @@ body {
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
     margin-top: 3px;
+    margin-left: 20px;
 }
 
 .attributes {
     background-color: #c3c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-
+    margin-right: 20px;
 }
 
 .button_grid {
