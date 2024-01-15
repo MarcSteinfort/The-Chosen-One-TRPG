@@ -35,7 +35,33 @@ function makeChoice(choice) {
             break;
     }
 }
+/**Function for the different Choices
+ */
+function handleStep1(choice) {
+    switch (choice) {
+        case 1:
+            updateStory("Placeholder");
+            updateButtonLabels(choiceTexts[currentStep - 1]);
+            break;
+        case 2:
+            updateStory("Placeholder");
+            updateButtonLabels(choiceTexts[currentStep - 1]);
+            break;
+        case 3:
+            updateStory("Placeholder");
+            updateButtonLabels(choiceTexts[currentStep - 1]);
+            break; 
+        case 4:
+            updateStory("Placeholder");
+            updateButtonLabels(choiceTexts[currentStep - 1]);
+            break;   
 
+        // Add more choices and outcomes for step 1...
+
+        default:
+            updateStory("Invalid choice. Try again.");
+            break;}
+    }
 /**Function to update the attributes */
 function updateAttributes() {
     document.getElementById("strength").textContent = `Strength: ${strength}`;
