@@ -13,7 +13,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: url("../image/Docks_Background_Phone.webp") no-repeat center center/cover;
+    background: url("../image/Docks_Background_4k.webp") no-repeat center center/cover;
 }
 
 .game {
@@ -51,4 +51,14 @@ body {
 
 .btn:hover {
     border-color: #000000;
+}
+
+@media screen and (min-width:768px) {
+    .button_grid {
+        grid-column: 2;
+
+    }
+    .game {
+        max-width: 300px;
+    }
 }
