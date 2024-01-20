@@ -1,39 +1,48 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+### The Chosen One Chapter 1
+##A Text-based RPG Adventure in a Highfantasy world.
 
-Welcome,
+"You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. The salty sea breeze fills the air as ships bob gently in the harbor. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen."<br>
+This is the first Chapter of an nameless Hero and his Adventures to save the World.... or destroy it. Every Step you do you can decide what you want to do next. With three Attributes you can overcome different challenges. Sometimes you will fail. Sometimes don't choose the Option, which works best for you and your approach.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+##List of Features
+<ol>
+<li>Three different Choices every Step you take.</li>
+<li>Three Attributes: "Strength, Dexterity, Intellect" every one of them can be increased</li>
+<li>Various Checks of these Attributes for your Playthrough.</li>
+<li>Ambient Music in the Background.</li>
+</ol>
 
-## Codeanywhere Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+##Look of the Page
+<img src="Placeholder" alt="Image of the Website" height="50%" width="50%"/>
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+##Testing
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
+<img src="Placeholder" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
 
-`http_server`
+The css Code was tested via jigsaw w3c there were no errors found for the code: <br>
+<img src="Placeholder" alt="Jigsaw Validation">
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Sources
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<ul>
+<li><a href="https://pythontutor.com/javascript.html#mode=edit/" target="_blank" rel"noopener>Assistance tool for Javascript code</a></li>
+<li><a href="https://validator.w3.org/" target="_blank" rel="noopener">Validator for my HTML5 code</a></li>
+<li><a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">Validator for my css code</a></li>
+</ul>
 
-To log into the Heroku toolbelt CLI:
+## Technologies used
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+<ul>
+<li>Googlefonts: <a href="https://fonts.google.com/" target="_blank" rel="noopener"> Google fonts </a> </li>
+<li>Tinypng to compress my Webp images: <a href="https://tinypng.com" target="_blank" rel="noopener"> Tinypng </a> </li>
+<li>Cloudconvert to convert my .png and .jpeg files: <a href="https://cloudconvert.com/jpeg-to-webp" target="_blank" rel="noopener"> Cloudconvert </a> </li>
+<li>Favicon converter for the Favicon Icon: <a href="https://favicon.io/favicon-converter/" target="_blank" rel="noopener"> Favicon converter </a> </li>
+<li>Website for the Mockup Image: <a href="https://techsini.com/multi-mockup/" target="_blank" rel="noopener">Techsini</a></li>
+<li>Tinyurl to shorten long Urls: <a href="https://tinyurl.com/app" target="_blank" rel="noopener">TinyUrl</a></li>
+<li>Photshop for my Backgroundpicture</li>
+</ul>
