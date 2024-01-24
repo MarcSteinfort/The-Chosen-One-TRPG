@@ -13,8 +13,8 @@ const choiceTexts = [
 /*1*/[{ text: "Talk to the Merchants", nextStep: 2 }, { text: "Go to the Warehouse", nextStep: 3 }, { text: "Look for the shady Figure", nextStep: 4 }],
 /*2*/[{ text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
 /*3*/[{ text: "Ask the Fishermen", nextStep: 0 }, { text: "Look for the shady Figure", nextStep: 4 }, { text: "Search for the local artist", nextStep: 9 }],
-/*4*/[{ text: "Try to break open the door", nextStep: 10 }, { text: "Try to find a open window or a way inside.", nextStep: 11 }, { text: "Lockpick the closed door", nextStep: 13 }],
-/*5*/[{ text: "Offer him a reward for information.", nextStep: 14 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
+/*4*/[{ text: "Try to break open the door", increaseAttribute: strength +=2, nextStep: 10 }, { text: "Try to find a open window or a way inside.", nextStep: 11 }, { text: "Lockpick the closed door", nextStep: 13 }],
+/*5*/[{ text: "Offer him a reward for information.", increaseAttribute: intelligence +=1, nextStep: 14 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
 /*6*/[{ text: "Run from the guards", nextStep: 17 }, { text: "Explain everything to the Guards", nextStep: 18 }, { text: "Calm the Shady person and offer him payment for information.", nextStep: 19 }],
 /*7*/[{ text: "Introduce yourself and explain the situation.", nextStep: 20 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21 }, { text: "Try to catch him and ask him about the Portrait", nextStep: 22 }],
 /*8*/[{ text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }],
@@ -58,18 +58,16 @@ updateButtonLabels(choiceTexts[currentStep]);
 function makeChoice(choice) {
     handleStep(choice);
 }
+
 /**Function for the different Choices
  */
 function handleStep(choice) {
-    // Aus dem choiceTexts array den Index zum aktualisieren raus suchen
+
     let nextdescriptionText = choiceTexts[currentStep][choice - 1].nextStep
-    // Anhand des in der Auswahl hinterlegten Indexes den nächsten Text raus suchen
     let descriptionText = descriptionTexts[nextdescriptionText]
-    // Story aktualisieren
     updateStory(descriptionText.text)
-    // Anhand des Indexes die in descriptionText hinterlegt sind die passenden Buttons raussuchen
     updateButtonLabels(choiceTexts[descriptionText.buttons])
-    // Wert für nächsten Step speichern
+    increaseAttribute(choice.increaseAttribute);
     currentStep = descriptionText.buttons;
 }
 
@@ -78,6 +76,12 @@ function updateAttributes() {
     document.getElementById("strength").textContent = `Strength: ${strength}`;
     document.getElementById("dexterity").textContent = `Dexterity: ${dexterity}`;
     document.getElementById("intelligence").textContent = `Intelligence: ${intelligence}`;
+}
+
+function increaseAttribute(attribute) {
+
+        eval(`${attribute}++`);
+        updateAttributes();
 }
 
 /**Function to update story text */
