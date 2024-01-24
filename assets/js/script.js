@@ -4,265 +4,72 @@ let dexterity = 5;
 let intelligence = 5;
 
 
-let currentStep = 1;
+let currentStep = 0;
+let choiceCounter = 0;
 
 /*Arrays for Choices and descriptions*/
 const choiceTexts = [
-/*0*/    ["Ask the fishermen.", "Approach the shady figure.", "Talk to the merchants."],
-/*1*/    ["Talk to the Merchants", "Go to the Warehouse", "Look for the shady Figure"],
-/*2*/    ["Introduce yourself and ask if he knows about the stolen portrait.", "Grab his arm and demand information.", "Threaten him with legal consequences if he doesn't cooperate."],
-/*3*/    ["Ask the Fishermen", "Look for the shady Figure", "Search for the local artist"],
-/*4*/    ["Try to break open the door", "Try to find a open window or a way inside.", "Lockpick the closed door"],
-/*5*/    ["Offer him a reward for information.", "Mention the Queen's wrath if he withholds information.", "Ask about any suspicious activities he might have witnessed"],
-/*6*/    ["Run from the guards", "Explain everything to the Guards", "Calm the Shady person and offer him payment for information."],
-/*7*/    ["Introduce yourself and explain the situation.", "Throw something at him to stop him from potentially running ask him about the portrait.", "Try to catch him and ask him about the Portrait"]
-/*8*/    ["Continue"]
+/*0*/    [{text: "Ask the fishermen.", nextStep:0}, {text: "Approach the shady figure.", nextStep:1}, {text:"Talk to the merchants.", nextStep:2}],
+/*1*/    [{text:"Talk to the Merchants", nextStep:2}, {text:"Go to the Warehouse", nextStep:3}, {text:"Look for the shady Figure", nextStep:4}],
+/*2*/    [{text:"Introduce yourself and ask if he knows about the stolen portrait.", nextStep:5}, {text:"Grab his arm and demand information.", nextStep: 6}, {text:"Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7}],
+/*3*/    [{text: "Ask the Fishermen", nextStep:0}, {text:"Look for the shady Figure", nextStep:4}, {text:"Search for the local artist",nextStep:9}],
+/*4*/    [{text:"Try to break open the door", nextStep:10}, {text:"Try to find a open window or a way inside.", nextStep:11}, {text:"Lockpick the closed door", nextStep:13}],
+/*5*/    [{text:"Offer him a reward for information.", nextStep: 14}, {text:"Mention the Queen's wrath if he withholds information.", nextStep: 15}, {text: "Ask about any suspicious activities he might have witnessed", nextStep: 16}],
+/*6*/    [{text:"Run from the guards", nextStep: 17}, {text:"Explain everything to the Guards", nextStep:18}, {text:"Calm the Shady person and offer him payment for information.", nextStep: 19}],
+/*7*/    [{text:"Introduce yourself and explain the situation.", nextStep: 20}, {text:"Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21}, {text:"Try to catch him and ask him about the Portrait", nextStep: 22}]
+/*8*/    [{text:"Continue", nextStep: 24}]
 ];
 
-const descriptionText = [
-/*0*/     "The fishermen mention seeing a suspicious person sneaking around the warehouses.",
-/*1*/     "As you approach, the figure notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It's a hooded man, glancing nervously around. 'What do you want?' he asks.",
-/*2*/     "A merchant recognizes the portrait and points you to a local artist living in a warehouse who might have more information.",
-/*3*/     "You arrived at the Warehouse as described by the Merchant. It seems to be closed",
-/*4*/     "After looking out for the shady Figure you find it and it notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It's a hooded man, glancing nervously around. 'What do you want?' he asks.",
-/*5*/     "You decide to take a diplomatic approach. 'I am a detective of the crown, and I heard you might have information about a stolen portrait. Care to share?'",
-/*6*/     "The man reacts defensively, attracting attention from nearby guards.",
-/*7*/     "The man, fearing legal repercussions, spills the rumors he heard. About a Artist living in a warehouse who might have more information. Following this description you arrive at a closed Warehouse.",
-/*8*/     "After looking for the shady Figure you find it and it notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It is a hooded man, glancing nervously around. 'What do you want?' he asks.",
-/*9*/     "You follow the tracks of the artist to a closed Warehouse",
-/*10*/    "You break open the door and see inside an Atelier with a young man painting.",
-/*11*/    "You find a open Window on the level above you. It appears you can climb up there and get in. Inside, you see an atelier with a young man painting.",
-/*12*/    "Inside, you see an atelier with a young man painting.",
-/*13*/    "You manage to open the door and inside you see an Atelier with a young man painting.",
-/*14*/    "He gladly accepts the reward and shares information about a Artist living in a warehouse who might know more about this painting.",
-/*15*/    "The man, fearing legal repercussions, spills the rumours he heard. About a Artist living in a warehouse who might have more information. Following this description you arrive at a closed Warehouse.",
-/*16*/    "He can not recall any suspicious activity.",
+const descriptionTexts = [
+/*0*/     {text:"The fishermen mention seeing a suspicious person sneaking around the warehouses.", buttons:1},
+/*1*/     {text:"As you approach, the figure notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It's a hooded man, glancing nervously around. 'What do you want?' he asks.", buttons:7},
+/*2*/     {text:"A merchant recognizes the portrait and points you to a local artist living in a warehouse who might have more information.", buttons:3},
+/*3*/     {text:"You arrived at the Warehouse as described by the Merchant. It seems to be closed", buttons:4},
+/*4*/     {text:"After looking out for the shady Figure you find it and it notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It's a hooded man, glancing nervously around. 'What do you want?' he asks.", buttons:2},
+/*5*/     {text:"You decide to take a diplomatic approach. 'I am a detective of the crown, and I heard you might have information about a stolen portrait. Care to share?'", buttons:5},
+/*6*/     {text:"The man reacts defensively, attracting attention from nearby guards.", buttons:6},
+/*7*/     {text:"The man, fearing legal repercussions, spills the rumors he heard. About a Artist living in a warehouse who might have more information. Following this description you arrive at a closed Warehouse.", buttons:4},
+/*8*/     {text:"After looking for the shady Figure you find it and it notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It is a hooded man, glancing nervously around. 'What do you want?' he asks.", buttons:2},
+/*9*/     {text:"You follow the tracks of the artist to a closed Warehouse", buttons: 4},
+/*10*/    {text:"You break open the door and see inside an Atelier with a young man painting.", buttons:5},
+/*11*/    {text:"You find a open Window on the level above you. It appears you can climb up there and get in. Inside, you see an atelier with a young man painting.", buttons:7},
+/*12*/    {text:"Inside, you see an atelier with a young man painting.", buttons:7},
+/*13*/    {text:"You manage to open the door and inside you see an Atelier with a young man painting.", buttons:7},
+/*14*/    {text:"He gladly accepts the reward and shares information about a Artist living in a warehouse who might know more about this painting.", buttons:4},
+/*15*/    {text:"The man, fearing legal repercussions, spills the rumours he heard. About a Artist living in a warehouse who might have more information. Following this description you arrive at a closed Warehouse.", buttons:4},
+/*16*/    {text:"He can not recall any suspicious activity.", buttons:5},
 /*17*/    "You did not manage to escape the guards and will be taken into custody. At the Time you explain everything and are allowed to set your foot free. The Thief already escaped you did not manage to catch him before. The punishment of your Queen will be severe. (Game Over)",
 /*18*/    "The do not believe you and you will be taken into custody. At the Time you explain everything and are allowed to set your foot free. The Thief already escaped you did not manage to catch him before. The punishment of your Queen will be severe. (Game Over)",
-/*19*/    "He accepts your offer an tells you about an Artist living in the Warehouse down the street, who might have more Information.",
-/*20*/    "Introduce yourself and explain the situation.",
-/*21*/    "Throw something at him to stop him from potentially running ask him about the portrait.",
-/*22*/    "Try to catch him and ask him about the Portrait",
+/*19*/    {text:"He accepts your offer an tells you about an Artist living in the Warehouse down the street, who might have more Information.", buttons:4},
+/*20*/    {text:"He listens to you, and tells you about a meeting point in the near Tavern, the Thief wants to sell the Portrait", buttons:8},
+/*21*/    {text:"You hit him in the back, under pain and scared for his wellbeing he tells you about a meeting in the near Tavern, where the thief wants to sell the portrait.", buttons:8},
+/*22*/    {text:"You caught him, under intense Pressuer, he tells you about a meeting point in the near Tavern, the Thief wants to sell the portrait", buttons:8},
 /*23*/    "He tells you about a meeting point in the near Tavern of the Thief who wants to sell the Portrait.",
 /*24*/    "You head to the Tavern, it is lively, filled with sailors and locals enjoying their drinks. As you enter, you everybody is looking at you. The air is suddenly thick with tension. (To be continued)"
 ];
 
 updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
-updateButtonLabels(choiceTexts[currentStep - 1]);
+updateButtonLabels(choiceTexts[currentStep]);
 
 /**Function for the different Steps.
  */
 function makeChoice(choice) {
-    switch (currentStep) {
-
-        case 1:
-            handleStep1(choice);
-            break;
-        case 2:
-            handleStep2(choice);
-            break;
-        case 3:
-            handleStep3(choice);
-            break;
-        case 4:
-            handleStep4(choice);
-            break;
-        case 5:
-            handleStep5(choice);
-            break;
-        case 6:
-            handleStep6(choice);
-            break;
-        case 7:
-            handleStep7(choice);
-            break;        
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
+    handleStep(choice);
 }
 /**Function for the different Choices
  */
-function handleStep1(choice) {
-    switch (choice) {
-        case 1:
-            updateStory(descriptionText[currentStep - 1]);
-            updateButtonLabels(choiceTexts[currentStep]);
-            
-            break;
-
-        case 2:
-
-            updateStory(descriptionText[currentStep]);
-            updateButtonLabels(choiceTexts[currentStep + 1]);
-            break;
-
-        case 3:
-
-            updateStory(descriptionText[currentStep +1]);
-            updateButtonLabels(choiceTexts[currentStep +2]);
-            break;
-
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
+function handleStep(choice) {
+    // Aus dem choiceTexts array den Index zum aktualisieren raus suchen
+    let nextdescriptionText = choiceTexts[currentStep][choice - 1].nextStep
+    // Anhand des in der Auswahl hinterlegten Indexes den nächsten Text raus suchen
+    let descriptionText = descriptionTexts[nextdescriptionText]
+    // Story aktualisieren
+    updateStory(descriptionText.text)
+    // Anhand des Indexes die in descriptionText hinterlegt sind die passenden Buttons raussuchen
+    updateButtonLabels(choiceTexts[descriptionText.buttons])
+    // Wert für nächsten Step speichern
+    currentStep = descriptionText.buttons;
 }
-
-function handleStep2(choice) {
-    switch (choice) {
-        case 1:
-;
-            updateStory(descriptionText[currentStep]);
-            updateButtonLabels(choiceTexts[currentStep +1]);
-            break;
-        case 2:
-
-            updateStory(descriptionText[currentStep +7]);
-            updateButtonLabels(choiceTexts[currentStep +2]);
-
-            break;
-        case 3:
-
-            updateStory(descriptionText[currentStep +2]);
-            updateButtonLabels(choiceTexts[currentStep]);
-
-            break;
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
-}
-
-function handleStep3(choice) {
-    switch (choice) {
-        case 1:
-
-            updateStory(descriptionText[currentStep +2]);
-            updateButtonLabels(choiceTexts[currentStep +2]);
-            break;
-
-        case 2:
-
-            updateStory(descriptionText[currentStep +3]);
-            updateButtonLabels(choiceTexts[currentStep +3]);
-            break;
-
-        case 3:
-
-            updateStory(descriptionText[currentStep +4]);
-            updateButtonLabels(choiceTexts[currentStep +1]);
-            break;
-            
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
-}
-
-function handleStep4(choice) {
-    switch (choice) {
-        case 1:
-
-            updateStory(descriptionText[currentStep +10]);
-            updateButtonLabels(choiceTexts[currentStep]);
-            break;
-
-        case 2:
-
-            updateStory(descriptionText[currentStep +3]);
-            updateButtonLabels(choiceTexts[currentStep]);
-            break;
-
-        case 3:
-
-            updateStory(descriptionText[currentStep +12]);
-            updateButtonLabels(choiceTexts[currentStep +1]);
-            break;
-            
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
-}
-
-function handleStep5(choice) {
-    switch (choice) {
-        case 1:
-            if (strength >= 5) {
-                strength += 2;
-                updateAttributes();
-                updateStory(descriptionText[currentStep +5]);
-                updateButtonLabels(choiceTexts[currentStep +2]);
-                break;
-            }
-        else {
-            "The door doesn't open. (Try one of the other two options.)"
-        }
-
-        case 2:
-            if (dexterity >=5) {
-                dexterity += 2;
-                updateAttributes();
-                updateStory(descriptionText[currentStep +6]);
-                updateButtonLabels(choiceTexts[currentStep +2]);
-                break;
-            }
-            else {
-                "You can't manage to climb up to the Window. (Try one of the other two options.)"
-            }
-
-        case 3:
-            if (intelligence >= 5) {
-                intelligence += 2;
-                updateAttributes();
-                updateStory(descriptionText[currentStep +8]);
-                updateButtonLabels(choiceTexts[currentStep +4]);
-                break;
-            }
-            else {
-                "You can't lockpick the door. (Try one of the other two options.)"
-            }
-            
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
-}
-
-function handleStep6(choice) {
-    switch (choice) {
-        case 1:
-
-            updateStory(descriptionText[currentStep +10]);
-            updateButtonLabels(choiceTexts[currentStep]);
-            break;
-
-        case 2:
-
-            updateStory(descriptionText[currentStep +3]);
-            updateButtonLabels(choiceTexts[currentStep]);
-            break;
-
-        case 3:
-
-            updateStory(descriptionText[currentStep +12]);
-            updateButtonLabels(choiceTexts[currentStep +1]);
-            break;
-            
-        default:
-            updateStory("Invalid choice. Try again.");
-            break;
-    }
-    currentStep= currentStep+1;
-}
-
-
 
 /**Function to update the attributes */
 function updateAttributes() {
@@ -280,6 +87,6 @@ function updateStory(text) {
 function updateButtonLabels(labels) {
     let buttons = document.querySelectorAll(".btn");
     buttons.forEach((button, index) => {
-        button.textContent = labels[index];
+        button.textContent = labels[index].text;
     });
 }
