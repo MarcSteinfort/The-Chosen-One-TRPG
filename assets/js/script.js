@@ -55,7 +55,7 @@ updateButtonLabels(choiceTexts[currentStep]);
 /**Function for the different Steps.
  */
 function makeChoice(choice) {
-    handleStep(choice);
+    handleStep(choice, descriptionTexts[currentStep]);
 }
 
 /**Function for the different Choices
@@ -64,14 +64,13 @@ function handleStep(choice) {
 
     let nextdescriptionText = choiceTexts[currentStep][choice - 1].nextStep
     let descriptionText = descriptionTexts[nextdescriptionText]
-    updateAttributes();
+    updateAttributes(nextdescriptionText);
     updateStory(descriptionText.text)
     updateButtonLabels(choiceTexts[descriptionText.buttons])
     currentStep = descriptionText.buttons;
 }
 
-function updateAttributes(descriptionText) {
-
+function updateAttributes(descriptionTexts) {
     if (descriptionText.text.includes("break open the door") || descriptionText.text.includes("grab his arm")) {
         strength += 1;
     }
@@ -82,12 +81,12 @@ function updateAttributes(descriptionText) {
         intelligence += 1;
     }
 
-    // Update the displayed attributes
     updateAttributes();
 }
 
 /**Function to update the attributes */
 function updateAttributes() {
+    console.log("Updating attributes with:", descriptionText.text);
     document.getElementById("strength").textContent = `Strength: ${strength}`;
     document.getElementById("dexterity").textContent = `Dexterity: ${dexterity}`;
     document.getElementById("intelligence").textContent = `Intelligence: ${intelligence}`;
