@@ -10,15 +10,15 @@ let currentStep = 0;
 const choiceTexts = [
 /*0*/[{ text: "Ask the fishermen.", nextStep: 0 }, { text: "Approach the shady figure.", nextStep: 1 }, { text: "Talk to the merchants.", nextStep: 2 }],
 /*1*/[{ text: "Talk to the Merchants", nextStep: 2 }, { text: "Go to the Warehouse", nextStep: 3 }, { text: "Look for the shady Figure", nextStep: 4 }],
-/*2*/[{ text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
+/*2*/[{ text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6, strength: 1 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
 /*3*/[{ text: "Ask the Fishermen", nextStep: 0 }, { text: "Look for the shady Figure", nextStep: 4 }, { text: "Search for the local artist", nextStep: 9 }],
-/*4*/[{ text: "Try to break open the door", nextStep: 10 }, { text: "Try to find a open window or a way inside.", nextStep: 11 }, { text: "Lockpick the closed door", nextStep: 13 }],
-/*5*/[{ text: "Offer him a reward for information.", nextStep: 14 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
+/*4*/[{ text: "Try to break open the door", nextStep: 10, strength: 1 }, { text: "Try to find a open window or a way inside.", nextStep: 11 }, { text: "Lockpick the closed door", nextStep: 13, dexterity: 1 }],
+/*5*/[{ text: "Offer him a reward for information.", nextStep: 14, intelligence: 1 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
 /*6*/[{ text: "Run from the guards", nextStep: 17 }, { text: "Explain everything to the Guards", nextStep: 18 }, { text: "Calm the Shady person and offer him payment for information.", nextStep: 19 }],
-/*7*/[{ text: "Introduce yourself and explain the situation.", nextStep: 20 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21 }, { text: "Try to catch him and ask him about the Portrait", nextStep: 22 }],
+/*7*/[{ text: "Introduce yourself and explain the situation.", nextStep: 20, intelligence: 2 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21, strength: 2 }, { text: "Try to catch him and ask him about the Portrait", nextStep: 22, dexterity: 2 }],
 /*8*/[{ text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }],
 /*9*/[{ text: "Gameover" }, { text: "Gameover" }, { text: "Gameover" }],
-/*10*/[{ text: ""}, { text: ""}, { text: ""}, ]
+/*10*/[]
 ];
 
 const descriptionTexts = [
@@ -46,7 +46,7 @@ const descriptionTexts = [
 /*21*/    { text: "You hit him in the back, under pain and scared for his wellbeing he tells you about a meeting in the near Tavern, where the thief wants to sell the portrait.", buttons: 8 },
 /*22*/    { text: "You caught him, under intense Pressuer, he tells you about a meeting point in the near Tavern, the Thief wants to sell the portrait", buttons: 8 },
 /*23*/    "He tells you about a meeting point in the near Tavern of the Thief who wants to sell the Portrait.",
-/*24*/    { text: "You head to the Tavern, it is lively, filled with sailors and locals enjoying their drinks. As you enter, everybody is looking at you. The air is suddenly thick with tension. (To be continued)", buttons: 10}
+/*24*/    { text: "You head to the Tavern, it is lively, filled with sailors and locals enjoying their drinks. As you enter, everybody is looking at you. The air is suddenly thick with tension. (To be continued)", buttons: 10 }
 ];
 
 updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
@@ -62,23 +62,25 @@ function makeChoice(choice) {
  */
 function handleStep(choice) {
 
-    let nextdescriptionText = choiceTexts[currentStep][choice - 1].nextStep
-    let descriptionText = descriptionTexts[nextdescriptionText]
-    updateAttributes(nextdescriptionText);
-    updateStory(descriptionText.text)
-    updateButtonLabels(choiceTexts[descriptionText.buttons])
+    let nextDescriptionText = choiceTexts[currentStep][choice - 1].nextStep;
+    let descriptionText = descriptionTexts[nextDescriptionText];
+    updateStory(descriptionText.text);
+    updateCharacterAttributes(choiceTexts[currentStep][choice - 1]);
+    updateButtonLabels(choiceTexts[descriptionText.buttons]);
     currentStep = descriptionText.buttons;
 }
+/**Function to read Attributes in Choicetexts */
+function updateCharacterAttributes(choice) {
+    if ("strength" in choice) {
+        strength += choice.strength;
+    }
 
-function updateAttributes(descriptionTexts) {
-    if (descriptionText.text.includes("break open the door") || descriptionText.text.includes("grab his arm")) {
-        strength += 1;
+    else if ("dexterity" in choice) {
+        dexterity += choice.dexterity;
     }
-    if (descriptionText.text.includes("try to catch him") || descriptionText.text.includes("Try to find a open window or a way inside.")) {
-        dexterity += 1;
-    }
-    if (descriptionText.text.includes("diplomatic approach") || descriptionText.text.includes("offer him payment for information") || descriptionText.text.includes("Lockpick the closed door")) {
-        intelligence += 1;
+
+    else if ("intelligence" in choice) {
+        intelligence += choice.intelligence;
     }
 
     updateAttributes();
@@ -86,12 +88,10 @@ function updateAttributes(descriptionTexts) {
 
 /**Function to update the attributes */
 function updateAttributes() {
-    console.log("Updating attributes with:", descriptionText.text);
     document.getElementById("strength").textContent = `Strength: ${strength}`;
     document.getElementById("dexterity").textContent = `Dexterity: ${dexterity}`;
     document.getElementById("intelligence").textContent = `Intelligence: ${intelligence}`;
 }
-
 
 /**Function to update story text */
 function updateStory(text) {
@@ -100,8 +100,13 @@ function updateStory(text) {
 
 /** Function to update button text labels */
 function updateButtonLabels(labels) {
-    let buttons = document.querySelectorAll(".btn");
-    buttons.forEach((button, index) => {
-        button.textContent = labels[index].text;
-    });
+    if (labels.length > 0) {
+        let buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button, index) => {
+            button.textContent = labels[index].text;
+        });
+    }
+    else {
+        document.getElementById("button_choice").remove();
+    }
 }
