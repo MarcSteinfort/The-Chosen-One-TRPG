@@ -117,7 +117,7 @@ Website behaved as expected
 
 To ensure being on the standards of Accesibility I used the Lighthousetool for testing the accesibility of the Website:
 For Desktop:
-<img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="50%" width="50%"/>
+<img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="35%" width="35%"/>
 And Mobile Device:
 <img src="assets/image/Lighthouse_overall.webp" alt="Image of the overall Lighthouse for the Mobileversion" height="35%" width="35%"/>
 
