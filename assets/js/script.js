@@ -6,13 +6,13 @@ let intelligence = 5;
 
 let currentStep = 0;
 
-/*Arrays for Choices and descriptions*/
+/*Arrays for Choices*/
 const choiceTexts = [
 /*0*/[{ text: "Ask the fishermen.", nextStep: 0 }, { text: "Approach the shady figure.", nextStep: 1 }, { text: "Talk to the merchants.", nextStep: 2 }],
 /*1*/[{ text: "Talk to the Merchants", nextStep: 2 }, { text: "Go to the Warehouse", nextStep: 3 }, { text: "Look for the shady Figure", nextStep: 4 }],
 /*2*/[{ text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6, strength: 1 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
 /*3*/[{ text: "Ask the Fishermen", nextStep: 0 }, { text: "Look for the shady Figure", nextStep: 4 }, { text: "Search for the local artist", nextStep: 9 }],
-/*4*/[{ text: "Try to break open the door", nextStep: 10, strength: 1 }, { text: "Try to find a open window or a way inside.", nextStep: 11 }, { text: "Lockpick the closed door", nextStep: 13, dexterity: 1 }],
+/*4*/[{ text: "Try to break open the door", nextStep: 10, strength: 1 }, { text: "Try to find a open window or a way inside.", nextStep: 11, dexterity: 1 }, { text: "Lockpick the closed door", nextStep: 13, intelligence: 1 }],
 /*5*/[{ text: "Offer him a reward for information.", nextStep: 14, intelligence: 1 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
 /*6*/[{ text: "Run from the guards", nextStep: 17 }, { text: "Explain everything to the Guards", nextStep: 18 }, { text: "Calm the Shady person and offer him payment for information.", nextStep: 19 }],
 /*7*/[{ text: "Introduce yourself and explain the situation.", nextStep: 20, intelligence: 2 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21, strength: 2 }, { text: "Try to catch him and ask him about the Portrait", nextStep: 22, dexterity: 2 }],
@@ -20,7 +20,7 @@ const choiceTexts = [
 /*9*/[{ text: "Gameover" }, { text: "Gameover" }, { text: "Gameover" }],
 /*10*/[]
 ];
-
+/*Arrays for descriptions*/
 const descriptionTexts = [
 /*0*/     { text: "The fishermen mention seeing a suspicious person sneaking around the warehouses.", buttons: 1 },
 /*1*/     { text: "As you approach, the figure notices you and tries to blend into the crowd. Quick on your feet, you close the gap. It's a hooded man, glancing nervously around. 'What do you want?' he asks.", buttons: 2 },
