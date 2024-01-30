@@ -14,7 +14,7 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 
 
 ## Look of the Page
-<img src="../image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
+<img src="assets/image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
 The Website just contains on page for the game itself. Focusing on the Javascript code.
 
 The Website contains a Favicon with his title.
