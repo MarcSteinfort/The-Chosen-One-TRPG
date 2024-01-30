@@ -95,6 +95,7 @@ Checked through the objects in the different Arrays and changed the values.
 
 
 ### Responsiveness
+
 The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Edge, Firefox and Opera browsers.<br>
 
 Steps to test:
@@ -116,7 +117,7 @@ Website behaved as expected
 
 To ensure being on the standards of Accesibility I used the Lighthousetool for testing the accesibility of the Website:
 For Desktop:
-<img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="35%" width="35%"/>
+<img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="50%" width="50%"/>
 And Mobile Device:
 <img src="assets/image/Lighthouse_overall.webp" alt="Image of the overall Lighthouse for the Mobileversion" height="35%" width="35%"/>
 
@@ -129,7 +130,7 @@ Added a description with fitting keywords for SEO.
 ### Validating
 
 The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
-<img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
+<img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code">
 
 The css Code was tested via jigsaw w3c there were no errors found for the code: <br>
 <img src="assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
