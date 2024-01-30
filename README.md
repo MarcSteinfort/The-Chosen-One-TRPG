@@ -8,7 +8,7 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 ## List of Features
 <ol>
 <li>Three different Choices every Step you take.</li>
-<li>Three Attributes: "Strength, Dexterity, Intellect" every one of them can be increased</li>>
+<li>Three Attributes: "Strength, Dexterity, Intellect" every one of them can be increased</li>
 <li>Newly created Favicon</li>
 </ol>
 
@@ -18,7 +18,7 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 The Website just contains on page for the game itself. Focusing on the Javascript code.
 
 The Website contains a Favicon with his title.
-<img src="../image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
+<img src="/workspace/The-Chosen-One-TRPG/assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
 
 
 
