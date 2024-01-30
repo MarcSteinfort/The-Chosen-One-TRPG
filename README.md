@@ -132,7 +132,7 @@ The html code was tested for validation via. w3c validator and no errors were fo
 <img src="../image/HTML_Validator.webp" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
 
 The css Code was tested via jigsaw w3c there were no errors found for the code: <br>
-<img src="../image/CSS_Validator.webp" alt="Jigsaw Validation">
+<img src="/workspace/The-Chosen-One-TRPG/assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
 
 
 
