@@ -18,7 +18,7 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 The Website just contains on page for the game itself. Focusing on the Javascript code.
 
 The Website contains a Favicon with his title.
-<img src="../image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
+<img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
 
 
 
@@ -116,9 +116,9 @@ Website behaved as expected
 
 To ensure being on the standards of Accesibility I used the Lighthousetool for testing the accesibility of the Website:
 For Desktop:
-<img src="../image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="35%" width="35%"/>
+<img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="35%" width="35%"/>
 And Mobile Device:
-<img src="../image/Lighthouse_overall.webp" alt="Image of the overall Lighthouse for the Mobileversion" height="35%" width="35%"/>
+<img src="assets/image/Lighthouse_overall.webp" alt="Image of the overall Lighthouse for the Mobileversion" height="35%" width="35%"/>
 
 Problems encountered:
 Low SEO rating for the website, due to no description and keywords in the HTML Head.
@@ -129,10 +129,10 @@ Added a description with fitting keywords for SEO.
 # Validating
 
 The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
-<img src="../image/HTML_Validator.webp" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
+<img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
 
 The css Code was tested via jigsaw w3c there were no errors found for the code: <br>
-<img src="/workspace/The-Chosen-One-TRPG/assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
+<img src="assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
 
 
 
