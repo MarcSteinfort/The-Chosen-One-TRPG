@@ -1,4 +1,4 @@
-### Shadows at the Docks 1
+# Shadows at the Docks 1
 ## A Text-based RPG Adventure in a Highfantasy world.
 
 "You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. The salty sea breeze fills the air as ships bob gently in the harbor. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen."<br>
@@ -15,16 +15,16 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 
 ## Look of the Page
 <img src="assets/image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
-The Website just contains on page for the game itself. Focusing on the Javascript code.
+The Website just contains on page for the game itself. Focusing on the Javascript code.<br>
 
-The Website contains a Favicon with his title.
+The Website contains a Favicon with his title.<br>
 <img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
 
 
 
 ## Troubleshooting
 
-I faced two major problems while creating, the game. The first was to create the nonlinear progress of the game due to the different choices the user has. 
+I faced two major problems while creating, the game. The first was to create the nonlinear progress of the game due to the different choices the user has. <br>
 My first intention was to handle this problem with a switch - case function.
 "function handleStep1(choice) {
             switch (choice) {
@@ -57,16 +57,16 @@ My first intention was to handle this problem with a switch - case function.
             }
         }"
 
-I tried several different cases in mutlitple Functions, which led to the conclusion
+I tried several different cases in mutlitple Functions, which led to the conclusion<br>
 that this way I could not manage to keep the game nonlinear and it just allowed me to prepare a few possible paths.<br>
-With the Functions I use in the newest deployment, I am able to do the whole game completely nonlinear.
-The second problem was how to handle the attribute and to update the correct value by certain choices of the array. The solution I first came up with was, to target this problem with If /Else statements. This did not work for the nonlinear gameplay, because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
+With the Functions I use in the newest deployment, I am able to do the whole game completely nonlinear.<br>
+The second problem was how to handle the attribute and to update the correct value by certain choices of the array. The solution I first came up with was, to target this problem with If /Else statements. This did not work for the nonlinear gameplay, <br>because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
 
 
 ## Testing
-
-# Function
-All Choices were tested for functionality accesibility if they work and every possible way of decision has been tested out.
+__________________________________________________________________________________________________________________________________
+### Function
+All Choices were tested for functionality accesibility if they work and every possible way of decision has been tested out.<br>
 Example:
 <ol>
   <li>Ask the Fishermen</li>
@@ -82,20 +82,20 @@ Example:
   <li>Introduce yourself and explain the situation</li>
   <li>Continue</li>
 </ol>
-There are multiple ways to get through all 24 Steps in the game.
+There are multiple ways to get through all 24 Steps in the game.<br>
 Problems encountered: 
 <ul>
 <li>Multiple Choices did not lead to the right description.</li>
 <li>The Attributes did not increase as expected.</li>
 </ul>
 
-Solutions:
-Used the Console.log for checking if the function is called as intended
+Solutions:<br>
+Used the Console.log for checking if the function is called as intended<br>
 Checked through the objects in the different Arrays and changed the values.
 
 
-# Responsiveness
-The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Edge, Firefox and Opera browsers.
+### Responsiveness
+The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Edge, Firefox and Opera browsers.<br>
 
 Steps to test:
 <ol>
@@ -112,7 +112,7 @@ Actual:
 Website behaved as expected
 
 
-# Accesibility
+### Accesibility
 
 To ensure being on the standards of Accesibility I used the Lighthousetool for testing the accesibility of the Website:
 For Desktop:
@@ -126,7 +126,7 @@ Low SEO rating for the website, due to no description and keywords in the HTML H
 Solution:
 Added a description with fitting keywords for SEO.
 
-# Validating
+### Validating
 
 The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
 <img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code" height="35%" width="35%"/>
