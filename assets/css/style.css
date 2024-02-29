@@ -9,38 +9,45 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    justify-content: space-between; 
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; 
     background: url("../image/Docks_Background_4k.webp") no-repeat center center/cover;
 }
-
+main {
+    flex: 1;
+}
+/*Background of the Buttons with text*/
 .game {
-    background-color: #c3c3c3c3;
+    background-color: #c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    margin-top: 3px;
-    margin-left: 20px;
+    margin: 10% 5px 0 5px;
+    padding: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
-
+/* Attributes*/
 .attributes {
-    background-color: #c3c3c3c3;
+    background-color: #c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    margin-right: 20px;
+    margin-top: 75%;
+    margin-left: 20%;
+    padding: 5px 0 5px 50px;
+    max-width: 50%;
 }
-
+/* Buttons with grid */
 .button_grid {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     grid-column: 1;
     gap: 5px;
     margin-top: 20px;
 }
-
+/*Buttons*/
 .btn {
     background-color: #007a14;
     color: white;
@@ -51,6 +58,24 @@ body {
 
 .btn:hover {
     border-color: #000000;
+}
+
+/*Footer
+I took this code from the Love running Project*/
+#social-networks {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-top: 50px;
+    margin-top: auto;
+}
+
+#social-networks i {
+    font-size: 160%;
+    padding: 15px;
+    color: #007a14;
+    background-color: #313131;
+    border-radius: 5px;
 }
 
 @media screen and (min-width:768px) {

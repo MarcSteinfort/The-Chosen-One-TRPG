@@ -23,23 +23,50 @@
 </head>
 
 <body>
-    <div class="attributes">
-        <p>Attributes:</p>
-        <p id="strength">Strength: 5</p>
-        <p id="dexterity">Dexterity: 5</p>
-        <p id="intelligence">Intelligence: 5</p>
-    </div>
-    <div class="game">
+    <main>
+        <div class="attributes">
+            <p>Attributes:</p>
+            <p id="strength">Strength: 5</p>
+            <p id="dexterity">Dexterity: 5</p>
+            <p id="intelligence">Intelligence: 5</p>
+        </div>
+        <div class="game">
 
-        <div class="gameplay">
-            <div id="text"></div>
-            <div id="button_choice" class="button_grid">
-                <button class="btn btn--1" onclick="makeChoice(1)"></button>
-                <button class="btn btn--2" onclick="makeChoice(2)"></button>
-                <button class="btn btn--3" onclick="makeChoice(3)"></button>
+            <div class="gameplay">
+                <div id="text"></div>
+                <div id="button_choice" class="button_grid">
+                    <button class="btn btn--1" onclick="makeChoice(1)"></button>
+                    <button class="btn btn--2" onclick="makeChoice(2)"></button>
+                    <button class="btn btn--3" onclick="makeChoice(3)"></button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <ul id="social-networks">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebookpage (opens in a new tab)"><i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li><a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitterpage (opens in a new tab)">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Youtubepage (opens in a new tab)">
+                    <i class="fa-brands fa-youtube-square"></i>
+                </a>
+
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Instagrampage (opens in a new tab)">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://kit.fontawesome.com/c91eb56b9d.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
