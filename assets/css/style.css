@@ -24,8 +24,7 @@ main {
     background-color: #c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    margin: 10% 5px 0 5px;
-    padding: 5px;
+    margin: 1% auto;
     display: flex;
     flex-direction: row;
 }
@@ -45,7 +44,7 @@ main {
     flex-direction: row;
     grid-column: 1;
     gap: 5px;
-    margin-top: 20px;
+    margin: 5px auto;
 }
 /*Buttons*/
 .btn {
@@ -59,7 +58,13 @@ main {
 .btn:hover {
     border-color: #000000;
 }
-
+#timer {
+    background-color: #c3c3c3;
+    margin: 1% auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+    max-width: 15%;
+}
 /*Footer
 I took this code from the Love running Project*/
 #social-networks {
@@ -87,6 +92,36 @@ I took this code from the Love running Project*/
     .attributes {
         margin-top: 25%;
         margin-left: 35%;
+        padding: 5px;
+        max-width: 30%;
+    }
+    #social-networks i {
+        padding: 20px 40px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .game {
+        margin: 10% 0 0 35%;
+        padding: 5px;
+        max-width: 30%;
+    }
+    .attributes {
+        margin-left: 35%;
+        padding: 5px;
+        max-width: 30%;
+    }
+    #social-networks i {
+        padding: 20px 40px;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .game {
+        padding: 5px;
+        max-width: 30%;
+    }
+    .attributes {
         padding: 5px;
         max-width: 30%;
     }

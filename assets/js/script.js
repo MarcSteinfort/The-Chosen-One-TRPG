@@ -112,7 +112,7 @@ function updateButtonLabels(labels) {
 }
 
 let timer; // Variable to hold the timer
-let timeLeft = 30; // Time in seconds
+let timeLeft = 10; // Time in seconds
 
 /* Function to start the timer */
 function startTimer(duration, callback) {
@@ -141,22 +141,22 @@ function updateTimerDisplay(time) {
 /* Callback function when time is up */
 function onTimeUp() {
     updateStory("Time is up! You hesitated too long and the opportunity is lost.");
-    updateButtonLabels([{ text: "Restart", nextStep: 0 }]); // Example action: Restart the game
-    currentStep = 0; // Reset current step
+    updateButtonLabels([{nextStep: 9}]); // Example action: Restart the game
+    currentStep = 9; // Reset current step
 }
 
 /* Example of how to start the timer when making a choice */
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
     handleStep(choice);
-    startTimer(30, onTimeUp); // Start a new timer for 30 seconds
+    startTimer(10, onTimeUp);
 }
 
 /* Initialize the game */
 function initializeGame() {
     updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
     updateButtonLabels(choiceTexts[currentStep]);
-    startTimer(30, onTimeUp); // Start the initial timer for 30 seconds
+    startTimer(10, onTimeUp);
 }
 
 // Call this function to initialize the game
