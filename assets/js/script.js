@@ -40,7 +40,7 @@ const descriptionTexts = [
 /*15*/    { text: "The man, fearing legal repercussions, spills the rumours he heard. About an artist living in a warehouse who might have more information. Following this description you arrive at a closed warehouse.", buttons: 4 },
 /*16*/    { text: "He can not recall any suspicious activity.", buttons: 5 },
 /*17*/    { text: "You did not manage to escape the guards and will be taken into custody. At the time you explain everything and are allowed to set your foot free. The thief already escaped you did not manage to catch him before. The punishment of your Queen will be severe.", buttons: 9 },
-/*18*/    { text: "The do not believe you and you will be taken into custody. At the time you explain everything and are allowed to set your foot free. The thief already escaped you did not manage to catch him before. The punishment of your Queen will be severe.", buttons: 9 },
+/*18*/    { text: "They do not believe you and you will be taken into custody. At the time you explain everything and are allowed to set your foot free. The thief already escaped you did not manage to catch him before. The punishment of your Queen will be severe.", buttons: 9 },
 /*19*/    { text: "He accepts your offer an tells you about an artist living in the warehouse down the street, who might have more information.", buttons: 4 },
 /*20*/    { text: "He listens to you, and tells you about a meeting point in the near tavern, the thief wants to sell the portrait", buttons: 8 },
 /*21*/    { text: "You hit him in the back, under pain and scared for his wellbeing he tells you about a meeting in the near tavern, where the thief wants to sell the portrait.", buttons: 8 },
@@ -141,11 +141,11 @@ function updateTimerDisplay(time) {
 /* Callback function when time is up */
 function onTimeUp() {
     updateStory("Time is up! You hesitated too long and the opportunity is lost.");
-    updateButtonLabels([{nextStep: 9}]); // Example action: Restart the game
+    updateButtonLabels('Restart', [{nextStep: 9}]); // Example action: Restart the game
     currentStep = 9; // Reset current step
 }
 
-/* Example of how to start the timer when making a choice */
+/*To start the timer when making a choice */
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
     handleStep(choice);
@@ -161,3 +161,33 @@ function initializeGame() {
 
 // Call this function to initialize the game
 initializeGame();
+
+// Get the audio element
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+function playMusic() {
+    backgroundMusic.play();
+    console.log('Music playing');
+}
+
+function pauseMusic() {
+    backgroundMusic.pause();
+    console.log('Music paused');
+}
+
+function stopMusic() {
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+    console.log('Music stopped');
+}
+
+function setVolume(volume) {
+    backgroundMusic.volume = volume;
+    console.log(`Volume set to ${volume}`);
+}
+
+// Example usage when document is ready
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Set initial volume
+    setVolume(0.5);
+});
