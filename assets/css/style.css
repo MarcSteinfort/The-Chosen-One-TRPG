@@ -64,7 +64,17 @@ main {
     margin: 3% auto;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    max-width: 15%;
+    max-width: 50%;
+}
+.music {
+    background-color: #c3c3c3;
+    margin: 30% auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+    max-width: 50%;
+}
+.music_btn {
+    margin: 5px;
 }
 /*Footer
 I took this code from the Love running Project*/
@@ -88,13 +98,13 @@ I took this code from the Love running Project*/
     .game {
         margin: 10% 0 0 35%;
         padding: 5px;
-        max-width: 30%;
+        max-width: 50%;
     }
     .attributes {
         margin-top: 25%;
         margin-left: 35%;
         padding: 5px;
-        max-width: 30%;
+        max-width: 50%;
     }
     #social-networks i {
         padding: 20px 40px;
@@ -105,7 +115,7 @@ I took this code from the Love running Project*/
     .game {
         margin: 10% 0 0 35%;
         padding: 5px;
-        max-width: 30%;
+        max-width: 50%;
     }
     .attributes {
         margin-left: 35%;
@@ -130,3 +140,4 @@ I took this code from the Love running Project*/
         padding: 20px 40px;
     }
 }
+
