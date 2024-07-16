@@ -8,19 +8,20 @@ let currentStep = 0;
 
 /*Arrays for Choices*/
 const choiceTexts = [
-/*0*/[{ text: "Ask the fishermen.", nextStep: 0 }, { text: "Approach the shady figure.", nextStep: 1 }, { text: "Talk to the merchants.", nextStep: 2 }],
-/*1*/[{ text: "Talk to the merchants", nextStep: 2 }, { text: "Go to the warehouse", nextStep: 3 }, { text: "Look for the shady figure", nextStep: 4 }],
-/*2*/[{ text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6, strength: 1 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
-/*3*/[{ text: "Ask the fishermen", nextStep: 0 }, { text: "Look for the shady figure", nextStep: 4 }, { text: "Search for the local artist", nextStep: 9 }],
-/*4*/[{ text: "Try to break open the door", nextStep: 10, strength: 1 }, { text: "Try to find a open window or a way inside.", nextStep: 11, dexterity: 1 }, { text: "Lockpick the closed door", nextStep: 13, intelligence: 1 }],
-/*5*/[{ text: "Offer him a reward for information.", nextStep: 14, intelligence: 1 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
-/*6*/[{ text: "Run from the guards", nextStep: 17 }, { text: "Explain everything to the Guards", nextStep: 18 }, { text: "Calm the Shady person and offer him payment for information.", nextStep: 19 }],
-/*7*/[{ text: "Introduce yourself and explain the situation.", nextStep: 20, intelligence: 2 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21, strength: 2 }, { text: "Try to catch him and ask him about the portrait", nextStep: 22, dexterity: 2 }],
-/*8*/[{ text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }],
-/*9*/[{ text: "Gameover"}, { text: "Gameover"}, { text: "Gameover"}],
-/*10*/[{text: "Head to the barkeeper", nextStep: 23 }, {text:"ask the Tavern if they seen the man the artist described"}, {text:"Sit down at a empty desk and observe the tavern"}],
-/*11*/[{text: "Force the barkeeper to give you the desired Information",}, {text: "Tell the barkeeper who you are and demand the Information",}, {text: ""}],
-/*12*/[{text: "Restart", nextStep: 25}, {text: "Restart", nextStep: 25}, {text: "Restart", nextStep: 25}]
+/*0*/ [{text: "Ask the fishermen.", nextStep: 0, condition:{strength: 6} }, { text: "Approach the shady figure.", nextStep: 1, condition: {strength: 5}}, { text: "Talk to the merchants.", nextStep: 2 }],
+/*1*/ [{text: "Talk to the merchants", nextStep: 2 }, { text: "Go to the warehouse", nextStep: 3 }, { text: "Look for the shady figure", nextStep: 4 }],
+/*2*/ [{text: "Introduce yourself and ask if he knows about the stolen portrait.", nextStep: 5 }, { text: "Grab his arm and demand information.", nextStep: 6, strength: 1 }, { text: "Threaten him with legal consequences if he doesn't cooperate.", nextStep: 7 }],
+/*3*/ [{text: "Ask the fishermen", nextStep: 0 }, { text: "Look for the shady figure", nextStep: 4 }, { text: "Search for the local artist", nextStep: 9 }],
+/*4*/ [{text: "Try to break open the door", nextStep: 10, strength: 1 }, { text: "Try to find a open window or a way inside.", nextStep: 11, dexterity: 1 }, { text: "Lockpick the closed door", nextStep: 13, intelligence: 1 }],
+/*5*/ [{text: "Offer him a reward for information.", nextStep: 14, intelligence: 1 }, { text: "Mention the Queen's wrath if he withholds information.", nextStep: 15 }, { text: "Ask about any suspicious activities he might have witnessed", nextStep: 16 }],
+/*6*/ [{text: "Run from the guards", nextStep: 17 }, { text: "Explain everything to the Guards", nextStep: 18 }, { text: "Calm the Shady person and offer him payment for information.", nextStep: 19 }],
+/*7*/ [{text: "Introduce yourself and explain the situation.", nextStep: 20, intelligence: 2 }, { text: "Throw something at him to stop him from potentially running ask him about the portrait.", nextStep: 21, strength: 2 }, { text: "Try to catch him and ask him about the portrait", nextStep: 22, dexterity: 2 }],
+/*8*/ [{text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }, { text: "Continue", nextStep: 24 }],
+/*9*/ [{text: "Gameover"}, { text: "Gameover"}, { text: "Gameover"}],
+/*10*/[{text: "Head to the barkeeper", nextStep: 23 }, {text:"Ask tavern if they seen the man the artist described", nextStep: 26}, {text:"Sit down at a empty desk and observe the tavern.",nextStep: 27}],
+/*11*/[{text: "Force the barkeeper to give you the desired Information", nextStep: 28, strength: 1}, {text: "Tell the barkeeper who you are and demand the Information",}, {text: "Offer the whole tavern a free drink for information."}],
+/*12*/[{text: "Restart", nextStep: 25}, {text: "Restart", nextStep: 25}, {text: "Restart", nextStep: 25}],
+/*13*/[{text: "Decide to face them head on, and force them to give you more informations.",condition: {strength: 8}}, {text: "try to bribe them to give you the informations.",intelligence: 2}, {text:"follow them once they leave the tavern.", dexterity: 2}],
 ];
 /*Arrays for descriptions*/
 const descriptionTexts = [
@@ -47,9 +48,12 @@ const descriptionTexts = [
 /*20*/    {text: "He listens to you, and tells you about a meeting point in the near tavern, the thief wants to sell the portrait", buttons: 8 },
 /*21*/    {text: "You hit him in the back, under pain and scared for his wellbeing he tells you about a meeting in the near tavern, where the thief wants to sell the portrait.", buttons: 8 },
 /*22*/    {text: "You caught him, under intense pressure, he tells you about a meeting point in the near tavern, the thief wants to sell the portrait", buttons: 8 },
-/*23*/    {text: "The barkeeper looks at you with a grim face", buttons: 12},
+/*23*/    {text: "The barkeeper looks at you with a grim face", buttons: 11},
 /*24*/    {text: "You head to the tavern, it is lively, filled with sailors and locals enjoying their drinks. As you enter, everybody is looking at you. The air is suddenly thick with tension.", buttons: 10 },
 /*25*/    {text: "You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.", buttons: 0},
+/*26*/    {text: "The whole tavern ignores you you don't think you'll be get informations this way.", buttons: 10},
+/*27*/    {text: "You can hear a group of well armed people whispering about their last contract to protect a Thief who was eager to escape the City with a boat.", buttons: 13},
+/*28*/    {text: ""}
 ];
 
 updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
@@ -61,25 +65,32 @@ function handleStep(choice) {
 
     let nextDescriptionText = choiceTexts[currentStep][choice - 1].nextStep;
     let descriptionText = descriptionTexts[nextDescriptionText];
-    updateStory(descriptionText.text);
-    updateCharacterAttributes(choiceTexts[currentStep][choice - 1]);
-    updateButtonLabels(choiceTexts[descriptionText.buttons]);
-    currentStep = descriptionText.buttons;
+    let selectedChoice = choiceTexts[currentStep][choice - 1];
+
+    if (selectedChoice.condition &&
+        ((selectedChoice.condition.strength && selectedChoice.condition.strength > strength) ||
+        (selectedChoice.condition.dexterity && selectedChoice.condition.dexterity > dexterity) ||
+        (selectedChoice.condition.intelligence && selectedChoice.condition.intelligence > intelligence))) {
+        document.getElementById("failurebox").style.display = "block"
+    }
+    else{
+        updateStory(descriptionText.text);
+        updateCharacterAttributes(choiceTexts[currentStep][choice - 1]);
+        updateButtonLabels(choiceTexts[descriptionText.buttons]);
+        currentStep = descriptionText.buttons;
+    }
 }
 /**Function to read Attributes in Choicetexts */
 function updateCharacterAttributes(choice) {
     if ("strength" in choice) {
         strength += choice.strength;
     }
-
     else if ("dexterity" in choice) {
         dexterity += choice.dexterity;
     }
-
     else if ("intelligence" in choice) {
         intelligence += choice.intelligence;
     }
-
     updateAttributes();
 }
 
@@ -152,14 +163,14 @@ function onTimeUp() {
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
     handleStep(choice);
-    startTimer(4, onTimeUp);
+    startTimer(10, onTimeUp);
 }
 
 /* Initialize the game */
 function initializeGame() {
     updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
     updateButtonLabels(choiceTexts[currentStep]);
-    startTimer(4, onTimeUp);
+    startTimer(10, onTimeUp);
 }
 
 // Call this function to initialize the game
