@@ -118,14 +118,14 @@ function onTimeUp() {
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
     handleStep(choice);
-    startTimer(25, onTimeUp);
+    startTimer(20, onTimeUp);
 }
 
 /* Initialize the game */
 function initializeGame() {
     updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
     updateButtonLabels(choiceTexts[currentStep]);
-    startTimer(25, onTimeUp);
+    startTimer(20, onTimeUp);
 }
 
 // Call this function to initialize the game
