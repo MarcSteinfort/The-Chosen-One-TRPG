@@ -20,7 +20,13 @@ function handleStep(choice) {
         ((selectedChoice.condition.strength && selectedChoice.condition.strength > strength) ||
         (selectedChoice.condition.dexterity && selectedChoice.condition.dexterity > dexterity) ||
         (selectedChoice.condition.intelligence && selectedChoice.condition.intelligence > intelligence))) {
-        document.getElementById("failurebox").style.display = "block"
+            let failureBox = document.getElementById("failurebox");
+            failureBox.style.display = "block";
+    
+            // Hide the failure box after 5 seconds
+            setTimeout(function() {
+                failureBox.style.display = "none";
+            }, 5000);
     }
     else{
         updateStory(descriptionText.text);
@@ -81,7 +87,7 @@ function startTimer(duration, callback) {
             clearInterval(timer);
             callback(); // Execute the callback function when time is up
         }
-    }, 1000);
+    }, 2500);
 }
 
 /* Function to stop the timer */
@@ -112,41 +118,15 @@ function onTimeUp() {
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
     handleStep(choice);
-    startTimer(10, onTimeUp);
+    startTimer(25, onTimeUp);
 }
 
 /* Initialize the game */
 function initializeGame() {
     updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
     updateButtonLabels(choiceTexts[currentStep]);
-    startTimer(10, onTimeUp);
+    startTimer(25, onTimeUp);
 }
 
 // Call this function to initialize the game
 initializeGame();
-
-// Get the audio element
-const backgroundMusic = document.getElementById('backgroundMusic');
-
-function playMusic() {
-    backgroundMusic.play();
-}
-
-function pauseMusic() {
-    backgroundMusic.pause();
-}
-
-function stopMusic() {
-    backgroundMusic.pause();
-    backgroundMusic.currentTime = 0;
-}
-
-function setVolume(volume) {
-    backgroundMusic.volume = volume;
-    console.log(`Volume set to ${volume}`);
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Set initial volume
-    setVolume(0.2);
-});
