@@ -1,5 +1,5 @@
-# Shadows at the Docks 1
-## A Text-based RPG Adventure in a Highfantasy world.
+# Shadows at the Docks 
+## A Text-based RPG Adventure in a Fantasy world.
 
 "You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. The salty sea breeze fills the air as ships bob gently in the harbor. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen."<br>
 This is the first Chapter of an nameless Hero and his Adventures to save the World.... or destroy it. Every Step you do you can decide what you want to do next. With three Attributes you can overcome different challenges. Sometimes you will fail. Sometimes don't choose the Option, which works best for you and your approach.
@@ -9,13 +9,40 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 <ol>
 <li>Three different Choices every Step you take.</li>
 <li>Three Attributes: "Strength, Dexterity, Intellect" every one of them can be increased</li>
+<li>Attribute Checks for certain tasks</li>
+<li>A Musicplayer for immersion which can be enabled or disabled.</li>
+<li>Images for the core character you encounter in the game</li>
+<li>Multiple ways to win or lose the game</li>
+<li>A Timer for your choices.</li>
 <li>Newly created Favicon</li>
 </ol>
+
+## Wireframes
+
+<img src="placeholder" alt="Wireframe of Indexpage (mobile)">
+
+<img src="placeholder" alt="Wireframe of Indexpage (desktop)">
+Indexpage
+
+<img src="placeholder" alt="Wireframe of Errorpage (mobile)">
+
+<img src="placeholder" alt="Wireframe of Errorpage (desktop)">
+404 Errorpage
+
+<img src="placeholder" alt="Wireframe of Gamepage (mobile)">
+
+<img src="placeholder" alt="Wireframe of Gamepage (desktop)">
+Gameplaypage
+
+<img src="placeholder" alt="Wireframe of Creditspage (mobile)">
+
+<img src="placeholder" alt="Wireframe of Creditspage (desktop)">
+Creditspage
 
 
 ## Look of the Page
 <img src="assets/image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
-The Website just contains on page for the game itself. Focusing on the Javascript code.<br>
+The Website contains of a Index, Credits and Gameplay page aswell as a 404 error page. What you see is the Gameplaypage at the Start of the game.<br>
 
 The Website contains a Favicon with his title.<br>
 <img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
@@ -59,8 +86,9 @@ My first intention was to handle this problem with a switch - case function.
 
 I tried several different cases in mutlitple Functions, which led to the conclusion<br>
 that this way I could not manage to keep the game nonlinear and it just allowed me to prepare a few possible paths.<br>
-With the Functions I use in the newest deployment, I am able to do the whole game completely nonlinear.<br>
-The second problem was how to handle the attribute and to update the correct value by certain choices of the array. The solution I first came up with was, to target this problem with If /Else statements. This did not work for the nonlinear gameplay, <br>because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
+With the Functions I use in the newest deployment, I am able to do the whole game completely nonlinear. I also have the possibility to make this adventure infinitely long and continue it as much as possible without changing any functions or other code.<br>
+The second problem was how to handle the attribute and to update the correct value by certain choices of the array. The solution I first came up with was, to target this problem with If /Else statements. This did not work for the nonlinear gameplay<br>
+because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
 
 
 ## Testing
@@ -82,23 +110,24 @@ Example:
   <li>Introduce yourself and explain the situation</li>
   <li>Continue</li>
 </ol>
-There are multiple ways to get through all 24 Steps in the game.<br>
+There are multiple ways to get through up to 90 Steps in the game.<br>
 Problems encountered: 
 <ul>
 <li>Multiple Choices did not lead to the right description.</li>
 <li>The Attributes did not increase as expected.</li>
+<li>Attribute Checks did not work as intended.</li>
 </ul>
 
 Solutions:<br>
 Used the Console.log for checking if the function is called as intended<br>
-Checked through the objects in the different Arrays and changed the values.
+Checked through the objects in the different Arrays and changed the values and conditions.
 
 
 ### Responsiveness
 
-The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Edge, Firefox and Opera browsers.<br>
+The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Firefox and Opera browsers.<br>
 
-Steps to test:
+# Steps to test:
 <ol>
 <li>Open browser and navigate to Shadows at the docks:</li>
 <li>Open the developer tools (right click and inspect)</li>
@@ -106,10 +135,11 @@ Steps to test:
 <li>Set the zoom to 50%</li>
 <li>Click and drag the responsive window to maximum width</li>
 </ol>
-Expected:
+
+# Expected:
 Website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap.
 
-Actual:
+# Actual:
 Website behaved as expected
 
 
@@ -120,12 +150,13 @@ For Desktop:
 <img src="assets/image/Lighthouse_overall_desktop.webp" alt="Image of the overall Lighthouse for the desktopversion" height="35%" width="35%"/>
 And Mobile Device:
 <img src="assets/image/Lighthouse_overall.webp" alt="Image of the overall Lighthouse for the Mobileversion" height="35%" width="35%"/>
-
 Problems encountered:
 Low SEO rating for the website, due to no description and keywords in the HTML Head.
 
 Solution:
 Added a description with fitting keywords for SEO.
+
+Wave Accessibility was used for testing of the deployed website, to match accessibility criterias
 
 ### Validating
 
@@ -145,11 +176,16 @@ The css Code was tested via jigsaw w3c there were no errors found for the code: 
 <li><a href="https://validator.w3.org/" target="_blank" rel="noopener">Validator for my HTML5 code</a></li>
 <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">Validator for my css code</a></li>
 <li><a href="https://jshint.com/" target="_blank" rel="noopener">Assistant to clean up Javascript code</a></li>
+<li>Github: <a href="https://github.com/dashboard" target="_blank" rel="noopener"> Github</a> </li>
+<li>All Pictures and Images are either made by myself or Creative commons licenses.</li>
 </ul>
 
 ## Technologies used
 
 <ul>
+
+<li>balsamiq for Wireframes: <a href="https://balsamiq.com/" target="_blank" rel="noopener">Balsamiq</a></li>
+
 <li>Googlefonts: <a href="https://fonts.google.com/" target="_blank" rel="noopener"> Google fonts </a> </li>
 <li>Tinypng to compress my Webp images: <a href="https://tinypng.com" target="_blank" rel="noopener"> Tinypng </a> </li>
 <li>Cloudconvert to convert my .png and .jpeg files: <a href="https://cloudconvert.com/jpeg-to-webp" target="_blank" rel="noopener"> Cloudconvert </a> </li>
@@ -157,5 +193,6 @@ The css Code was tested via jigsaw w3c there were no errors found for the code: 
 <li>Website for the Mockup Image: <a href="https://techsini.com/multi-mockup/" target="_blank" rel="noopener">Techsini</a></li>
 <li>Tinyurl to shorten long Urls: <a href="https://tinyurl.com/app" target="_blank" rel="noopener">TinyUrl</a></li>
 <li>Photshop for my Backgroundpicture</li>
-<li>Tutorial from Stackflow for implementing Backgroundmusic on a Webpage: <a href="https://stackoverflow.com/questions/6529645/how-to-add-background-music-to-a-web-page" target="_blank" rel="noopener">Stackflow</a></li>
+<li>Stackoverflow for help and tutorials for different tasks<a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stackoverflow</a></li>
+<li>Fontawesome for Icons: <a href="https://fontawesome.com/" targer="_blank" rel="noopener"> Fontawesome </a></li>
 </ul>

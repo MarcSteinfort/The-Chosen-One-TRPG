@@ -23,14 +23,17 @@
 </head>
 
 <body>
+    <header>
+        <h1 id="headline">Welcome to the Textadventure "Shadows at the docks."</h1>
+    </header>
     <main>
-        <section class="attributes">
+        <div class="attributes">
             <p>Attributes:</p>
             <p id="strength"> Strength: 5 </p>
             <p id="dexterity"> Dexterity: 5 </p>
             <p id="intelligence"> Intelligence: 5 </p>
-        </section>
-        <section class="game">
+        </div>
+        <div class="game">
             <div class="gameplay">
                 <div id="text"></div>
                 <div id="button_choice" class="button_grid">
@@ -39,22 +42,22 @@
                     <button class="btn btn--3" onclick="makeChoice(3)"></button>
                 </div>
             </div>
-        </section>
+        </div>
         <div id="timer">Time left: 10 seconds
         </div>
         <div id="failurebox">You do not have the required attributes to make this choice. please choose another one. 
         </div>
         <img alt="a barkeeper making a beer" src="assets/image/barkeeper.png" 
-            id="imgChange" class="images" onclick="changeImage()"/>
+            id="imgChange" class="images" onclick="changeImage()">
             
-        <section class="music">
+        <div class="music">
             <audio id="backgroundMusic" src="assets/Music/2021-02-23_-_Fantasy_Ambience_-_David_Fesliyan.mp3" loop></audio>
             <button class="music_btn" onclick="playMusic()">Play</button>
             <button class="music_btn" onclick="pauseMusic()">Pause</button>
             <button class="music_btn" onclick="stopMusic()">Stop</button>
             <label for="volumeControl">Volume:</label>
             <input type="range" id="volumeControl" min="0" max="1" step="0.01" onchange="setVolume(this.value)" value="0.2">
-        </section>
+        </div>
         
         <script src="musicPlayer.js"></script>
     </main>

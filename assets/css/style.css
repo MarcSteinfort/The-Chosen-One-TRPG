@@ -68,8 +68,9 @@ main {
     -webkit-text-stroke-color: #000000;
     background-color: #757575;
     border-radius: 4px;
-    box-shadow: 0 0 10px 2px;
+    width: 100%;
     align-self: center;
+    margin-bottom: 5%;
 }
 
 #indexbuttons{
