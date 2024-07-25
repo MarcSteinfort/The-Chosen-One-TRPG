@@ -8,10 +8,23 @@ let currentStep = 0;
 updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
 updateButtonLabels(choiceTexts[currentStep]);
 
+function changeImage(imgsrc, imgalt) {
+    document.getElementById("imgChange").src = imgsrc;
+    document.getElementById("imgChange").alt =imgalt;
+}
+
+function resetAttributes(){
+    strength = 5;
+    intelligence = 5;
+    dexterity = 5;
+    updateAttributes()
+}
 /**Function for the different Choices
  */
 function handleStep(choice) {
-
+    if(currentStep == 25){
+        resetAttributes();
+    }
     let nextDescriptionText = choiceTexts[currentStep][choice - 1].nextStep;
     let descriptionText = descriptionTexts[nextDescriptionText];
     let selectedChoice = choiceTexts[currentStep][choice - 1];
@@ -29,6 +42,13 @@ function handleStep(choice) {
             }, 5000);
     }
     else{
+        if(descriptionText.image){
+            changeImage(descriptionText.image, descriptionText.alt);
+            document.getElementById("imgChange").style.display="block"
+        }
+        else{
+            document.getElementById("imgChange").style.display="none"
+        }
         updateStory(descriptionText.text);
         updateCharacterAttributes(choiceTexts[currentStep][choice - 1]);
         updateButtonLabels(choiceTexts[descriptionText.buttons]);
@@ -107,10 +127,8 @@ function onTimeUp() {
     updateStory("Time is up! You hesitated too long and the opportunity is lost. The thief has already left the town. The punishment of the queen will be severe.");
     currentStep = 12; // Reset current step
     updateButtonLabels(choiceTexts[currentStep]);
-    strength = 5;
-    dexterity = 5;
-    intelligence = 5;
-    updateAttributes()
+    resetAttributes();
+
 }
 
 
@@ -123,7 +141,7 @@ function makeChoice(choice) {
 
 /* Initialize the game */
 function initializeGame() {
-    updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
+    updateStory(initialDescription.text);
     updateButtonLabels(choiceTexts[currentStep]);
     startTimer(20, onTimeUp);
 }

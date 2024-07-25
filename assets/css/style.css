@@ -59,7 +59,9 @@ main {
 .btn:hover {
     border-color: #000000;
 }
-
+.images {
+    display: none;
+}
 #headline{
     color: white;
     -webkit-text-stroke-width: 1px;
@@ -68,7 +70,6 @@ main {
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
     align-self: center;
-
 }
 
 #indexbuttons{
@@ -148,8 +149,11 @@ I took this code from the Love running Project*/
     color: #007a14;
 }
 
-/*@media screen and (min-width:768px) {
-
+@media screen and (min-width:768px) {
+.images {
+    display: block;
+    margin: 0% auto;
+}
 }
 
 @media screen and (min-width:1024px) {
@@ -159,4 +163,3 @@ I took this code from the Love running Project*/
 @media screen and (min-width:1440px) {
 
 }
-*/
