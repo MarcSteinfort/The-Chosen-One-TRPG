@@ -19,14 +19,15 @@
 </head>
 <body>
     <header>
-        <h1 id="headline">Welcome to the Textadventure "Shadows at the docks."</h1>
+        <h1 id="header">Shadows at the docks.</h1>
     </header>
     <main>
         <div>
-            <button class="btn" class="indexbuttons" onclick="startgame()">Start your adventure</button>
-            <button class="btn" class="indexbuttons" onclick="credits()">Credits!</button>
+            <button class="btn indexbuttons" onclick="startgame()">Start your adventure</button>
+            <button class="btn indexbuttons" onclick="credits()">Credits!</button>
         </div>
-        <div class="music">
+        <div class="music"> 
+            <!-- I got this code from Stackoverflow. -->
             <audio id="backgroundMusic" src="assets/Music/2021-02-23_-_Fantasy_Ambience_-_David_Fesliyan.mp3" loop></audio>
             <button class="music_btn" onclick="playMusic()">Play</button>
             <button class="music_btn" onclick="pauseMusic()">Pause</button>
@@ -36,6 +37,7 @@
         </div>
     </main>
     <footer>
+        <!--I took this code from the Love Running project.-->
         <ul id="social-networks">
             <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"
                     aria-label="Visit our Facebookpage (opens in a new tab)"><i class="fa-brands fa-facebook"></i>

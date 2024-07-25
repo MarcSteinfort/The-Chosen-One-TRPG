@@ -18,6 +18,17 @@ body {
 main {
     flex: 1;
 }
+
+#header {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+    background-color: #757575;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+    align-self: center;
+    margin-bottom: 5%;
+}
 /* Attributes*/
 .attributes {
     background-color: #c3c3c3;
@@ -59,16 +70,18 @@ main {
 .btn:hover {
     border-color: #000000;
 }
+/*Images of Character*/
 .images {
     display: none;
 }
-#headline{
+
+.headline{
     color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
     background-color: #757575;
     border-radius: 4px;
-    width: 100%;
+    box-shadow: 0 0 10px 2px;
     align-self: center;
     margin-bottom: 5%;
 }
