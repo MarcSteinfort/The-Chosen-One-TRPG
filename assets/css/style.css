@@ -73,7 +73,7 @@ main {
     margin-bottom: 5%;
 }
 
-#indexbuttons{
+.indexbuttons{
     display: flex;
     flex-direction: row;
     min-height: 40px;

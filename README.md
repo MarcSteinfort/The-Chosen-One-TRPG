@@ -2,7 +2,7 @@
 ## A Text-based RPG Adventure in a Fantasy world.
 
 "You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. The salty sea breeze fills the air as ships bob gently in the harbor. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen."<br>
-This is the first Chapter of an nameless Hero and his Adventures to save the World.... or destroy it. Every Step you do you can decide what you want to do next. With three Attributes you can overcome different challenges. Sometimes you will fail. Sometimes don't choose the Option, which works best for you and your approach.
+This is the first Chapter of an nameless Hero and his Adventures to save the World.... or destroy it. Every Step you do you can decide what you want to do next. With three Attributes you can overcome different challenges. Sometimes you will fail. Sometimes you don't. Choose the Option, which works best for you and your approach.
 
 
 ## List of Features
@@ -41,12 +41,18 @@ Creditspage
 
 
 ## Look of the Page
+
+<img src="Placeholder Index" alt="Image of the Indexsite">
+The Indexpage of the game<br>
+
 <img src="assets/image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
 The Website contains of a Index, Credits and Gameplay page aswell as a 404 error page. What you see is the Gameplaypage at the Start of the game.<br>
 
-The Website contains a Favicon with his title.<br>
-<img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
+<img src="placeholder Credits" alt="Image of the Creditswebsite">
+The Creditpage of the game.<br>
 
+<img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
+The Website contains a Favicon with his title.<br>
 
 
 ## Troubleshooting
@@ -91,9 +97,9 @@ The second problem was how to handle the attribute and to update the correct val
 because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
 
 
-## Testing
+### Testing
 __________________________________________________________________________________________________________________________________
-### Function
+## Function
 All Choices were tested for functionality accesibility if they work and every possible way of decision has been tested out.<br>
 Example:
 <ol>
@@ -123,11 +129,11 @@ Used the Console.log for checking if the function is called as intended<br>
 Checked through the objects in the different Arrays and changed the values and conditions.
 
 
-### Responsiveness
+## Responsiveness
 
 The page were tested to ensure responsiveness on screen sizes from 320px and upwards responsive design on Chrome, Firefox and Opera browsers.<br>
 
-# Steps to test:
+Steps to test:
 <ol>
 <li>Open browser and navigate to Shadows at the docks:</li>
 <li>Open the developer tools (right click and inspect)</li>
@@ -136,14 +142,14 @@ The page were tested to ensure responsiveness on screen sizes from 320px and upw
 <li>Click and drag the responsive window to maximum width</li>
 </ol>
 
-# Expected:
+Expected:
 Website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap.
 
-# Actual:
+Actual:
 Website behaved as expected
 
 
-### Accesibility
+## Accesibility
 
 To ensure being on the standards of Accesibility I used the Lighthousetool for testing the accesibility of the Website:
 For Desktop:
@@ -157,8 +163,9 @@ Solution:
 Added a description with fitting keywords for SEO.
 
 Wave Accessibility was used for testing of the deployed website, to match accessibility criterias
+<img src="Waveplaceholder" alt="Wave accessibility testing">
 
-### Validating
+## Validating
 
 The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
 <img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code">
@@ -167,7 +174,23 @@ The css Code was tested via jigsaw w3c there were no errors found for the code: 
 <img src="assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
 
 
+## Deployment
 
+Version Control
+The site was created using the Visual Studio code editor and pushed to github to the remote repository ‘The-Chosen-One’.<br>
+The following git commands were used throughout development to push code to the remote repo:<br>
+git add . - This command was used to add Code to the staging area before they are committed.<br>
+git commit -m “commit message” - This command was used to commit changes before the push.<br>
+git push - This command was used to push all committed code to the remote repository on github.<br>
+
+Deployment to Github Pages
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+From the menu on left select 'Pages'
+From the source section drop-down menu, select the Branch: main
+Click 'Save'
+A live link will be displayed in a green banner when published successfully.
+The live link can be found here - https://marcsteinfort.github.io/The-Chosen-One-TRPG/
   
 ## Sources
 
