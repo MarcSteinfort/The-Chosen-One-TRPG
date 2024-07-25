@@ -19,39 +19,42 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 
 ## Wireframes
 
-<img src="placeholder" alt="Wireframe of Indexpage (mobile)">
+<img src="assets/image/Index_mobile.webp" alt="Wireframe of Indexpage (mobile)">
 
-<img src="placeholder" alt="Wireframe of Indexpage (desktop)">
+<img src="assets/image/Index_desktop.webp" alt="Wireframe of Indexpage (desktop)">
 Indexpage
 
-<img src="placeholder" alt="Wireframe of Errorpage (mobile)">
+<img src="assets/image/404_mobile.webp" alt="Wireframe of Errorpage (mobile)">
 
-<img src="placeholder" alt="Wireframe of Errorpage (desktop)">
+<img src="assets/image/404_desktop.webp" alt="Wireframe of Errorpage (desktop)">
 404 Errorpage
 
-<img src="placeholder" alt="Wireframe of Gamepage (mobile)">
+<img src="assets/image/game_mobile.webp" alt="Wireframe of Gamepage (mobile)">
 
-<img src="placeholder" alt="Wireframe of Gamepage (desktop)">
+<img src="assets/image/Game_desktop.webp" alt="Wireframe of Gamepage (desktop)">
 Gameplaypage
 
-<img src="placeholder" alt="Wireframe of Creditspage (mobile)">
+<img src="assets/image/Credits_mobile.webp" alt="Wireframe of Creditspage (mobile)">
 
-<img src="placeholder" alt="Wireframe of Creditspage (desktop)">
+<img src="assets/image/Credits_desktop .webp" alt="Wireframe of Creditspage (desktop)">
 Creditspage
 
 
 ## Look of the Page
 
-<img src="Placeholder Index" alt="Image of the Indexsite">
+<img src="assets/image/Readme_Index.webp" alt="Image of the Indexsite" height="50%" width="50%">
 The Indexpage of the game<br>
 
-<img src="assets/image/Desktop_Screenshot.webp" alt="Image of the Website" height="50%" width="50%"/>
+<img src="assets/image/screenshot_readme.webp" alt="Image of the Website" height="50%" width="50%"/>
 The Website contains of a Index, Credits and Gameplay page aswell as a 404 error page. What you see is the Gameplaypage at the Start of the game.<br>
 
-<img src="placeholder Credits" alt="Image of the Creditswebsite">
+<img src="assets/image/Readme_Credits.webp" alt="Image of the Creditswebsite" height="50%" width="50%">
 The Creditpage of the game.<br>
 
-<img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website."/>
+<img src="assets/image/Readme_404.webp" alt="Image of the 404 Errorpage" height="50%" width="50%">
+The 404 Errorpage. <br>
+
+<img src="assets/image/Favicon_and_Title.webp" alt="Favicon and Title of the website." >
 The Website contains a Favicon with his title.<br>
 
 
@@ -163,12 +166,15 @@ Solution:
 Added a description with fitting keywords for SEO.
 
 Wave Accessibility was used for testing of the deployed website, to match accessibility criterias
-<img src="Waveplaceholder" alt="Wave accessibility testing">
+<img src="assets/image/Wave.webp" alt="Wave accessibility testing">
 
 ## Validating
 
 The html code was tested for validation via. w3c validator and no errors were found except for some typo mistakes like a space to much or stray tags. I corrected these and in the end there were no mistakes found. <br>
-<img src="assets/image/HTML_Validator.webp" alt="Image of the Validated HTML Code">
+<img src="assets/image/Validator_index.webp" alt="Image of the Validated HTML Code">
+<img src="assets/image/Html_game_validator.webp" alt="Image of the Validated HTML Code">
+<img src="assets/image/Validator_credits.webp" alt="Image of the Validated HTML Code">
+<img src="assets/image/Html_404_validator.webp" alt="Image of the Validated HTML Code">
 
 The css Code was tested via jigsaw w3c there were no errors found for the code: <br>
 <img src="assets/image/CSS_Validator.webp" alt="Jigsaw Validation">
@@ -208,7 +214,6 @@ The live link can be found here - https://marcsteinfort.github.io/The-Chosen-One
 <ul>
 
 <li>balsamiq for Wireframes: <a href="https://balsamiq.com/" target="_blank" rel="noopener">Balsamiq</a></li>
-
 <li>Googlefonts: <a href="https://fonts.google.com/" target="_blank" rel="noopener"> Google fonts </a> </li>
 <li>Tinypng to compress my Webp images: <a href="https://tinypng.com" target="_blank" rel="noopener"> Tinypng </a> </li>
 <li>Cloudconvert to convert my .png and .jpeg files: <a href="https://cloudconvert.com/jpeg-to-webp" target="_blank" rel="noopener"> Cloudconvert </a> </li>
