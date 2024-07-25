@@ -87,7 +87,7 @@ function startTimer(duration, callback) {
             clearInterval(timer);
             callback(); // Execute the callback function when time is up
         }
-    }, 2500);
+    }, 1000);
 }
 
 /* Function to stop the timer */

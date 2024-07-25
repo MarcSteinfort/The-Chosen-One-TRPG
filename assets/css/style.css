@@ -61,9 +61,14 @@ main {
 }
 
 #headline{
-    color: #c3c3c3c3;
+    color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
+    background-color: #757575;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+    align-self: center;
+
 }
 
 #indexbuttons{
@@ -74,6 +79,7 @@ main {
     margin-top: 10px;
     padding: 2px;
 }
+
 #timer {
     background-color: #c3c3c3;
     border-radius: 4px;
@@ -99,6 +105,30 @@ main {
 }
 .music_btn {
     margin: 5px;
+}
+
+.error {
+    display:flex;
+    flex-direction: column;
+    background-color: #c3c3c3;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+}
+#headlineError{
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+    background-color: #757575;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px;
+    align-self: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+#ref {
+    text-decoration: none;
+    align-self: center;
+    color: #000000;
 }
 /*Footer
 I took this code from the Love running Project*/
