@@ -12,7 +12,6 @@ body {
     flex-direction: column; 
     justify-content: space-between; 
     align-items: center;
-    width: 100vw;
     min-height: 100vh; 
     background: url("../image/Docks_Background_4k.webp") no-repeat center center/cover;
 }
@@ -24,7 +23,7 @@ main {
     background-color: #c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    padding: 5px 0 5px 50px;
+    padding: 5px 50px;
 }
 
 /*Background of the Buttons with text*/
@@ -34,7 +33,7 @@ main {
     background-color: #c3c3c3;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
-    padding: 5px 0 5px 50px;
+    padding: 5px 50px;
     margin:3% auto
 }
 
@@ -54,6 +53,7 @@ main {
     outline: none;
     border-radius: 5px;
     margin: auto;
+    padding: 5px;
 }
 
 .btn:hover {
@@ -96,6 +96,8 @@ main {
     border-radius: 4px;
     box-shadow: 0 0 10px 2px;
     display: none;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .music {
     background-color: #c3c3c3;
@@ -151,15 +153,28 @@ I took this code from the Love running Project*/
 
 @media screen and (min-width:768px) {
 .images {
-    display: block;
     margin: 0% auto;
+    margin-top: 5%;
+}
+
+.game, .gameplay {
+    width: 100%;
+}
+
+.attributes {
+    width: 100%;
+    min-height: 50px;
 }
 }
 
 @media screen and (min-width:1024px) {
-
+.images {
+    width: 75%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px;
 }
-
-@media screen and (min-width:1440px) {
+.attributes, .game, #failurebox, .music, .music_btn, #timer, .btn{
+    font-size: 14pt;
+}
 
 }
