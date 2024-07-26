@@ -7,12 +7,12 @@ let currentStep = 0;
 
 updateStory("You find yourself standing at the bustling docks of Eldoria, a medieval city bathed in the warm glow of the setting sun. Your mission is clear - to hunt down a thief who stole a precious portrait of the Queen.");
 updateButtonLabels(choiceTexts[currentStep]);
-
+/**Function to change the image for certain choices */
 function changeImage(imgsrc, imgalt) {
     document.getElementById("imgChange").src = imgsrc;
     document.getElementById("imgChange").alt =imgalt;
 }
-
+/**Function to reset the Attributes */
 function resetAttributes(){
     strength = 5;
     intelligence = 5;
