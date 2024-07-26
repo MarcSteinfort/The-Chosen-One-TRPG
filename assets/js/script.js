@@ -17,7 +17,7 @@ function resetAttributes(){
     strength = 5;
     intelligence = 5;
     dexterity = 5;
-    updateAttributes()
+    updateAttributes();
 }
 /**Function for the different Choices
  */
@@ -131,7 +131,6 @@ function onTimeUp() {
 
 }
 
-
 /*To start the timer when making a choice */
 function makeChoice(choice) {
     stopTimer(); // Stop any existing timer
@@ -145,6 +144,11 @@ function initializeGame() {
     updateButtonLabels(choiceTexts[currentStep]);
     startTimer(20, onTimeUp);
 }
+
+// Add event listeners to buttons
+document.getElementById("btn--1").addEventListener("click", () => makeChoice(1));
+document.getElementById("btn--2").addEventListener("click", () => makeChoice(2));
+document.getElementById("btn--3").addEventListener("click", () => makeChoice(3));
 
 // Call this function to initialize the game
 initializeGame();

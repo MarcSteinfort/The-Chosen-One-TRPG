@@ -99,6 +99,11 @@ With the Functions I use in the newest deployment, I am able to do the whole gam
 The second problem was how to handle the attribute and to update the correct value by certain choices of the array. The solution I first came up with was, to target this problem with If /Else statements. This did not work for the nonlinear gameplay<br>
 because the game jumps depending on the choices back to a earlier stage of the game. To prevent exploiting, some choices, I needed to create functions, which support my nonlinear gameplay, and can be called by the same function as the choicemaking function.
 
+## Unfixed Bugs
+Resetting the Attributes to standard after a Gameover which is not a timeout.<br>
+It was fixed but after adding the Eventlistener it came up again.<br>
+I was not able to fix it intime. but I will adress it in a future release. A refresh of the page resets the attributes to standard.
+
 
 ### Testing
 __________________________________________________________________________________________________________________________________
@@ -207,6 +212,7 @@ The live link can be found here - https://marcsteinfort.github.io/The-Chosen-One
 <li><a href="https://jshint.com/" target="_blank" rel="noopener">Assistant to clean up Javascript code</a></li>
 <li><a href="https://github.com/dashboard" target="_blank" rel="noopener"> Github</a></li>
 <li>All Pictures and Images are either made by myself or Creative commons licenses.</li>
+<li><a href="https://www.pond5.com/de/" target="_blank" rel="noopener">Musicsample</a></li>
 </ul>
 
 ## Technologies used

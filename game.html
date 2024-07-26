@@ -27,29 +27,32 @@
         <h2 id="header">Shadows at the docks.</h2>
     </header>
     <main>
+        <!-- Your Atrributes-->
         <div class="attributes">
             <p>Attributes:</p>
             <p id="strength"> Strength: 5 </p>
             <p id="dexterity"> Dexterity: 5 </p>
             <p id="intelligence"> Intelligence: 5 </p>
         </div>
+        <!--Descriptions and Choices-->
         <div class="game">
             <div class="gameplay">
                 <div id="text"></div>
                 <div id="button_choice" class="button_grid">
-                    <button class="btn btn--1" onclick="makeChoice(1)"></button>
-                    <button class="btn btn--2" onclick="makeChoice(2)"></button>
-                    <button class="btn btn--3" onclick="makeChoice(3)"></button>
+                    <button class="btn" id="btn--1"></button>
+                    <button class="btn" id="btn--2"></button>
+                    <button class="btn" id="btn--3"></button>
                 </div>
             </div>
         </div>
+        <!--Timer-->
         <div id="timer">Time left: 10 seconds
         </div>
         <div id="failurebox">You do not have the required attributes to make this choice. please choose another one. 
         </div>
         <img alt="a barkeeper making a beer" src="assets/image/barkeeper.png" 
             id="imgChange" class="images" onclick="changeImage()">
-            
+            <!--Musicplayer-->
         <div class="music">
             <!-- I got this code from Stackoverflow. -->
             <audio id="backgroundMusic" src="assets/Music/2021-02-23_-_Fantasy_Ambience_-_David_Fesliyan.mp3" loop></audio>
@@ -88,9 +91,9 @@
         </ul>
     </footer>
     <script src="https://kit.fontawesome.com/c91eb56b9d.js" crossorigin="anonymous"></script>
+    <script src="assets/js/music.js"></script>
     <script src="assets/js/Text.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/music.js"></script>
     
 
 </body>
