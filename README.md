@@ -19,22 +19,22 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 
 ## Wireframes
 
-<img src="assets/image/Index_mobile.webp" alt="Wireframe of Indexpage (mobile)" height="50%" width="50%>
+<img src="assets/image/Index_mobile.webp" alt="Wireframe of Indexpage (mobile)" height="50%" width="50%">
 
 <img src="assets/image/Index_desktop.webp" alt="Wireframe of Indexpage (desktop)">
 Indexpage
 
-<img src="assets/image/404_mobile.webp" alt="Wireframe of Errorpage (mobile)" height="50%" width="50%>
+<img src="assets/image/404_mobile.webp" alt="Wireframe of Errorpage (mobile)" height="50%" width="50%">
 
 <img src="assets/image/404_desktop.webp" alt="Wireframe of Errorpage (desktop)">
 404 Errorpage
 
-<img src="assets/image/game_mobile.webp" alt="Wireframe of Gamepage (mobile)" height="50%" width="50%>
+<img src="assets/image/game_mobile.webp" alt="Wireframe of Gamepage (mobile)" height="50%" width="50%">
 
 <img src="assets/image/Game_desktop.webp" alt="Wireframe of Gamepage (desktop)">
 Gameplaypage
 
-<img src="assets/image/Credits_mobile.webp" alt="Wireframe of Creditspage (mobile)" height="50%" width="50%>
+<img src="assets/image/Credits_mobile.webp" alt="Wireframe of Creditspage (mobile)" height="50%" width="50%">
 
 <img src="assets/image/Credits_desktop .webp" alt="Wireframe of Creditspage (desktop)">
 Creditspage
