@@ -21,7 +21,7 @@ function resetAttributes(){
 }
 /**Function for the different Choices
  */
-function handleStep(choice) {
+function handleStep(choice) { //got help of a professional friend of mine with this function
     if(currentStep == 25){
         resetAttributes();
     }
@@ -29,7 +29,7 @@ function handleStep(choice) {
     let descriptionText = descriptionTexts[nextDescriptionText];
     let selectedChoice = choiceTexts[currentStep][choice - 1];
 
-    if (selectedChoice.condition &&
+    if (selectedChoice.condition && //I had help especially with this section 
         ((selectedChoice.condition.strength && selectedChoice.condition.strength > strength) ||
         (selectedChoice.condition.dexterity && selectedChoice.condition.dexterity > dexterity) ||
         (selectedChoice.condition.intelligence && selectedChoice.condition.intelligence > intelligence))) {
@@ -97,7 +97,7 @@ function updateButtonLabels(labels) {
 let timer; // Variable to hold the timer
 
 /* Function to start the timer */
-function startTimer(duration, callback) {
+function startTimer(duration, callback) { //This code is from Stackoverflow but I modified it for my needs. This includes all other function in relation with the timer
    let timeLeft = duration;
     updateTimerDisplay(timeLeft); // Initialize the display
     timer = setInterval(function() {

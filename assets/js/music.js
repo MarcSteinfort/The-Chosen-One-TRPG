@@ -1,4 +1,5 @@
 // Get the audio element
+// I got this code from Stackoverflow
 const backgroundMusic = document.getElementById('backgroundMusic');
 
 function playMusic() {

@@ -1,4 +1,5 @@
-/*Arrays for Choices*/
+/**Arrays for Choices*/
+// I had support with the nesting of the arrays of a friend of mine who is a professional "example for this is line 15"
 const choiceTexts = [
     /*0*/ [{text: "Ask the fishermen.", nextStep: 0, }, { text: "Approach the shady figure.", nextStep: 1}, { text: "Talk to the merchants.", nextStep: 2 }],
     /*1*/ [{text: "Talk to the merchants", nextStep: 2 }, { text: "Go to the warehouse", nextStep: 3 }, { text: "Look for the shady figure", nextStep: 4 }],

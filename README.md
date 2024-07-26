@@ -19,22 +19,22 @@ This is the first Chapter of an nameless Hero and his Adventures to save the Wor
 
 ## Wireframes
 
-<img src="assets/image/Index_mobile.webp" alt="Wireframe of Indexpage (mobile)">
+<img src="assets/image/Index_mobile.webp" alt="Wireframe of Indexpage (mobile)" height="50%" width="50%>
 
 <img src="assets/image/Index_desktop.webp" alt="Wireframe of Indexpage (desktop)">
 Indexpage
 
-<img src="assets/image/404_mobile.webp" alt="Wireframe of Errorpage (mobile)">
+<img src="assets/image/404_mobile.webp" alt="Wireframe of Errorpage (mobile)" height="50%" width="50%>
 
 <img src="assets/image/404_desktop.webp" alt="Wireframe of Errorpage (desktop)">
 404 Errorpage
 
-<img src="assets/image/game_mobile.webp" alt="Wireframe of Gamepage (mobile)">
+<img src="assets/image/game_mobile.webp" alt="Wireframe of Gamepage (mobile)" height="50%" width="50%>
 
 <img src="assets/image/Game_desktop.webp" alt="Wireframe of Gamepage (desktop)">
 Gameplaypage
 
-<img src="assets/image/Credits_mobile.webp" alt="Wireframe of Creditspage (mobile)">
+<img src="assets/image/Credits_mobile.webp" alt="Wireframe of Creditspage (mobile)" height="50%" width="50%>
 
 <img src="assets/image/Credits_desktop .webp" alt="Wireframe of Creditspage (desktop)">
 Creditspage
@@ -205,7 +205,7 @@ The live link can be found here - https://marcsteinfort.github.io/The-Chosen-One
 <li><a href="https://validator.w3.org/" target="_blank" rel="noopener">Validator for my HTML5 code</a></li>
 <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">Validator for my css code</a></li>
 <li><a href="https://jshint.com/" target="_blank" rel="noopener">Assistant to clean up Javascript code</a></li>
-<li>Github: <a href="https://github.com/dashboard" target="_blank" rel="noopener"> Github</a> </li>
+<li><a href="https://github.com/dashboard" target="_blank" rel="noopener"> Github</a></li>
 <li>All Pictures and Images are either made by myself or Creative commons licenses.</li>
 </ul>
 
